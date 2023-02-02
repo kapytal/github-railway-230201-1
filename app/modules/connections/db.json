@@ -1,0 +1,16 @@
+{
+  "name": "db",
+  "module": "dbconnector",
+  "action": "connect",
+  "options": {
+    "client": "postgres",
+    "connection": {
+      "host": "{{$_ENV.PGHOST}}",
+      "port": "{{$_ENV.PGPORT}}",
+      "user": "{{$_ENV.PGUSER}}",
+      "password": "{{$_ENV.PGPASSWORD}}",
+      "database": "{{$_ENV.PGDATABASE}}"
+    }
+  },
+  "fileName": "db.json"
+}
