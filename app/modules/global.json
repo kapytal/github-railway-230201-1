@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "$_ENV": [
+      {
+        "type": "text",
+        "name": "PGDATABASE"
+      },
+      {
+        "type": "text",
+        "name": "PGHOST"
+      },
+      {
+        "type": "text",
+        "name": "PGPASSWORD"
+      },
+      {
+        "type": "text",
+        "name": "PGPORT"
+      },
+      {
+        "type": "text",
+        "name": "PGUSER"
+      }
+    ]
+  },
+  "exec": {}
+}
