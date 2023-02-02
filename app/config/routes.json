@@ -4,6 +4,11 @@
       "path": "/",
       "page": "index",
       "routeType": "page"
+    },
+    {
+      "path": "/create-joke",
+      "page": "create-joke",
+      "layout": ""
     }
   ]
 }

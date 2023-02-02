@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "jokes",
+      "module": "dbconnector",
+      "action": "select",
+      "options": {
+        "connection": "db",
+        "sql": {
+          "type": "SELECT",
+          "columns": [
+            {
+              "table": "jokes",
+              "column": "id"
+            },
+            {
+              "table": "jokes",
+              "column": "joke"
+            }
+          ],
+          "params": [],
+          "table": {
+            "name": "jokes"
+          },
+          "primary": "id",
+          "joins": [],
+          "query": "SELECT id, joke\nFROM jokes"
+        }
+      },
+      "output": true,
+      "meta": [
+        {
+          "type": "number",
+          "name": "id"
+        },
+        {
+          "type": "text",
+          "name": "joke"
+        }
+      ],
+      "outputType": "array"
+    }
+  }
+}

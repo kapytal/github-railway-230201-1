@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "$_POST": [
+      {
+        "type": "text",
+        "options": {
+          "rules": {
+            "core:required": {}
+          }
+        },
+        "name": "joke"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "joke",
+      "module": "dbupdater",
+      "action": "insert",
+      "options": {
+        "connection": "db",
+        "sql": {
+          "type": "insert",
+          "values": [
+            {
+              "table": "jokes",
+              "column": "joke",
+              "type": "text",
+              "value": "{{$_POST.joke}}"
+            }
+          ],
+          "table": "jokes",
+          "returning": "id",
+          "query": "INSERT INTO jokes\n(joke) VALUES (:P1 /* {{$_POST.joke}} */)",
+          "params": [
+            {
+              "name": ":P1",
+              "type": "expression",
+              "value": "{{$_POST.joke}}",
+              "test": ""
+            }
+          ]
+        }
+      },
+      "meta": [
+        {
+          "name": "identity",
+          "type": "text"
+        },
+        {
+          "name": "affected",
+          "type": "number"
+        }
+      ],
+      "output": true
+    }
+  }
+}

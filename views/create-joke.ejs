@@ -1,0 +1,18 @@
+<!-- Wappler include is="dmx-app" id="jokes" appConnect="local" bootstrap5="local" fontawesome_6="local" bootstrap_icons="local" -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form is="dmx-serverconnect-form" id="serverconnectform1" method="post" action="/api/crete_joke" dmx-generator="bootstrap5" dmx-form-type="vertical">
+                <div class="form-group mb-3">
+                    <label for="inp_joke">Joke</label>
+                    <input type="text" class="form-control" id="inp_joke" name="joke" aria-describedby="inp_joke_help" placeholder="Enter Joke">
+                    <small id="inp_joke_help" class="form-text text-muted">Your input is very valuable.</small>
+                </div>
+                <div class="form-group mb-3">
+                    <button type="submit" class="btn btn-primary" dmx-bind:disabled="state.executing">Save <span class="spinner-border spinner-border-sm" role="status" dmx-show="state.executing"></span></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<meta name="ac:route" content="/create-joke">
